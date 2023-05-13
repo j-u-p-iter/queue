@@ -1,1 +1,1 @@
-console.log("Welcome to the new project!")
+export { Queue } from './Queue';
