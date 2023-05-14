@@ -1,7 +1,31 @@
 import { SinglyLinkedList } from '@j.u.p.iter/singly-linked-list';
 
+/**
+ * The Queue implementation is based on SinglyLinkedList.
+ *   Adding to the top of the queue, we are actually adding the 
+ *     element to the end of the list.
+ *
+ *   Removing from the queue, we are removing the first added element
+ *     to the list - the first element in the list.
+ *
+ *   We don't remove element from the end of the list instead
+ *     since it's more performant operation for the SinglyLinkedList. Removing from the end
+ *     we have to iterate through the whole list, starting from the head.
+ *
+ *   We don't need to do this iteration, removing or adding element from/to the beginning of the list.
+ *
+ */
+
 export class Queue {
   constructor(private singlyLinkedList: SinglyLinkedList = new SinglyLinkedList) {}
+
+  /**
+   * Clears the stack
+   *
+   */
+  public clear() {
+    this.singlyLinkedList.clear(); 
+  }
 
   /**
    * Returns the number of elements 

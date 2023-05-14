@@ -88,4 +88,16 @@ describe('Queue', () => {
       expect(queue.getBack()).toBe('One more element');
     });
   });
+
+  describe('clear method', () => {
+    it('clears the queue', () => {
+      const queue = Queue.fromArray(['Some element', 'One more element']);
+
+      expect(queue.getSize()).toBe(2);
+
+      queue.clear();
+
+      expect(queue.getSize()).toBe(0);
+    });
+  });
 });
